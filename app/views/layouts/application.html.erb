@@ -13,30 +13,31 @@
 
   <body>
     <div class="wrapper">
-
-      <nav class="top-bar top" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="/">Rails Template</a></h1>
-          </li>
-        </ul>
-
-        <section class="top-bar-section">
-          <ul class="right">
-            <li class="<%= yield(:homeActive) %>"><a href="/">Home</a></li>
-            <li class="<%= yield(:aboutActive) %>"><a href="/about">About</a></li>
+        <nav class="top-bar top" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="/">Rails Template</a></h1>
+            </li>
           </ul>
 
-        </section>
-      </nav>
-      <div class="content">
-        <%= yield %>
-      </div>
-      <footer>
-        <div class="row">
-          <div class="small-12 columns"><p>Footer Content</p></div>
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="<%= yield(:homeActive) %>"><a href="/">Home</a></li>
+              <li class="<%= yield(:aboutActive) %>"><a href="/about">About</a></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+
+          </section>
+        </nav>
+        <div class="content">
+          <%= yield %>
         </div>
-      </footer>
+        <footer>
+          <div class="row">
+            <div class="small-12 columns"><p>Footer Content</p></div>
+          </div>
+        </footer>
+  
     </div>
     <%= javascript_include_tag "application" %>
   </body>
